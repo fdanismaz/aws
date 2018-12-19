@@ -1,3 +1,9 @@
 server:
   servlet:
     context-path: /aws
+
+aws:
+  profile: ...
+  region: ...
+  s3:
+    bucket: ...
