@@ -1,6 +1,7 @@
 package com.fd.aws.s3.controller;
 
 import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.model.CreateBucketRequest;
 import com.fd.aws.s3.model.Person;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +27,8 @@ public class PersonController {
     @Qualifier("awsS3PeopleClient")
     private AmazonS3 s3client;
 
-    @Value("${aws.s3.bucket.test.people}")
-    private String awsS3TestPeopleBucket;
+    @Value("${aws.s3.bucket}")
+    private String awsS3Bucket;
 
     @GetMapping("/{id}")
     public ResponseEntity<Person> get(@PathVariable int id) {
@@ -46,7 +47,10 @@ public class PersonController {
     @PostMapping
     public boolean save(@RequestBody Person person) {
         try {
-            this.s3client.putObject(this.awsS3TestPeopleBucket, person.getName(), person.toString());
+            if (!this.s3client.doesBucketExistV2(this.awsS3Bucket)) {
+                this.s3client.createBucket(new CreateBucketRequest(this.awsS3Bucket));
+            }
+            this.s3client.putObject(this.awsS3Bucket, person.getName(), person.toString());
             return true;
         } catch (Exception e) {
             log.error(e.getMessage());
