@@ -30,7 +30,7 @@ nb-configuration.xml
 # Test
 **test-output**
 
-**local.properties**
+**/*-local.*
 **.springBeans
 **/target/**
 **release.properties
