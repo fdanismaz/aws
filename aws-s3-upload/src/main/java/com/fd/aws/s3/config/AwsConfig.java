@@ -14,14 +14,17 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class AwsConfig {
 
-    @Value("${aws.s3.region}")
+    @Value("${aws.profile}")
+    private String awsProfile;
+
+    @Value("${aws.region}")
     private String awsRegion;
 
-    @Bean("awsS3PeopleClient")
-    public AmazonS3 awsS3PeopleClient() {
+    @Bean
+    public AmazonS3 awsS3Client() {
         AmazonS3 s3Client = AmazonS3ClientBuilder.standard()
                 .withRegion(this.awsRegion)
-                .withCredentials(new ProfileCredentialsProvider())
+                .withCredentials(new ProfileCredentialsProvider(this.awsProfile))
                 .build();
         return s3Client;
     }

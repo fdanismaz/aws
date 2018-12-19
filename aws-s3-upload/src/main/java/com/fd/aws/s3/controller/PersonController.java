@@ -24,7 +24,6 @@ import java.util.List;
 public class PersonController {
 
     @Autowired
-    @Qualifier("awsS3PeopleClient")
     private AmazonS3 s3client;
 
     @Value("${aws.s3.bucket}")
