@@ -1,0 +1,36 @@
+# Eclipse Workspace
+**/.recommenders/**
+**/.sonarlint/**
+**/.metadata/**
+**/Servers/**
+
+# Eclipse Project
+**.classpath
+**.project
+**.settings/
+
+# Intellij
+**.idea/**
+**.idea/**
+**.iml
+**.iws
+**/.idea
+**/*.iml
+
+# Netbeans
+nbactions.xml
+nb-configuration.xml
+
+# Mac
+**.DS_Store
+
+# Allure
+**allure-results**
+
+# Test
+**test-output**
+
+**/*-local.*
+**.springBeans
+**/target/**
+**release.properties
