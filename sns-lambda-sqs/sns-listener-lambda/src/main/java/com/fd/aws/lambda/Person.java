@@ -1,4 +1,4 @@
-package com.fd.aws.lambda.model;
+package com.fd.aws.lambda;
 
 import lombok.Getter;
 import lombok.Setter;
