@@ -7,9 +7,9 @@ parses it and puts it into the SQS.
 1. Download the source code `aws-commons` under the `aws` repository because the maven modules in this
 project depends on it.
 
-1. Create an SQS from the AWS Console and get its ARN
+1. Create an SQS from the AWS Console and get its URL
 
-1. Update the SQS arn in the `SnsTestTopicHandler.java` class
+1. Update the SQS URL in the `SnsTestTopicHandler.java` class
 
 1. Create an SNS topic from the AWS Console and get its ARN
 
