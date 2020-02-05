@@ -28,7 +28,7 @@ public class SnsTestTopicHandler implements RequestHandler<SNSEvent, Void> {
 
             AwsSdkClientFactory awsSdkClientFactory = new AwsSdkClientFactory(new AwsCredentialsProviderFactory());
             AmazonSQS sqsClient = awsSdkClientFactory.getAwsSqsClient();
-            String queueUrl = "https://sqs.us-east-1.amazonaws.com/902703094694/FurkanTest";
+            String queueUrl = "...";
             SendMessageRequest sendMessageRequest = new SendMessageRequest(queueUrl, serializedPerson);
             sqsClient.sendMessage(sendMessageRequest);
 

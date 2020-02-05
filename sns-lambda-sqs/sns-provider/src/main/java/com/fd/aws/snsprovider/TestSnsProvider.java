@@ -18,7 +18,7 @@ public class TestSnsProvider {
         AwsSdkClientFactory awsSdkClientFactory = new AwsSdkClientFactory(new AwsCredentialsProviderFactory());
         AmazonSNS snsClient = awsSdkClientFactory.getAwsSnsClient();
 
-        String snsTopicArn = "arn:aws:sns:us-east-1:902703094694:FurkanTest";
+        String snsTopicArn = "...";
         Person person = new Person();
         person.setName("Cansu");
         person.setSurname("Danismaz");
